@@ -72,9 +72,10 @@ body {
 .arangodb-navmenu li {
   display: block;
   float: left;
+  height: 48px;
 }
 
-.arangodb-navmenu li a {
+.arangodb-navmenu li.not-algolia a {
   display: block;
   float: left;
   padding: 0 10px;
@@ -86,7 +87,7 @@ body {
   font-family: Roboto, Helvetica, sans-serif;
 }
 
-.arangodb-navmenu li.active-tab a, .arangodb-navmenu li a:hover {
+.arangodb-navmenu li.active-tab a, .arangodb-navmenu li.not-algolia a:hover {
   background-color: #88A049 !important;
 }
 
@@ -105,10 +106,6 @@ body {
     margin-left: 10px;
   }
 
-  .google-search {
-    margin-right: 5px !important;
-  }
-
   .downloadIcon {
     margin-right: 0;
   }
@@ -120,12 +117,6 @@ body {
 
 
 @media screen and (max-width: 800px) {
-
-  .google-search,
-  .google-search .gsc-input-box,
-  .google-search .gsc-input-box input {
-    width: 130px !important;
-  }
 
   .arangodb-navmenu li a {
     font-size: 15px;
@@ -162,23 +153,6 @@ body {
     display: none !important;
   }
 
-  .google-search,
-  .google-search .gsc-input-box,
-  .google-search .gsc-input-box input {
-    width: 24px !important;
-  }
-
-  .google-search .gsc-input-box input[style] {
-    background: url(https://docs.arangodb.com/assets/searchIcon.png) left center no-repeat rgb(255, 255, 255) !important;
-  }
-
-  .google-search .gsc-input-box input:focus {
-    width: 200px !important;
-    position: relative;
-    left: -176px;
-    background-position: -9999px -9999px !important;
-  }
-
 }
 
 @media screen and (max-width: 400px) {
@@ -186,6 +160,7 @@ body {
     font-size: 13px;
     padding: 0 5px;
   }
+
   .google-search {
     display: none;
   }
@@ -226,4 +201,22 @@ body div#hs-eu-cookie-confirmation div#hs-eu-cookie-confirmation-inner > p {
     float: left;
     color: #000 !important;
     text-shadow: none;
+}
+
+
+.searchinput {
+  height: 30px;
+  line-height: 30px;
+  box-sizing: border-box;
+  padding: 0 15px 0 30px;
+  border: 1px solid #e3e3e3;
+  color: #2c3e50;
+  outline: none;
+  border-radius: 15px;
+  margin-right: 10px;
+  transition: border-color 0.2s ease;
+  background: #fff url("../images/search.png") 8px 5px no-repeat;
+  background-size: 20px;
+  vertical-align: middle !important;
+  margin: 8px;
 }
